@@ -14,8 +14,6 @@ namespace IPHider
         public bool IsEnabled { get; set; } = true;
         public bool Debug { get; set; } = false;
 #endif
-
-        public bool ShowInLogs { get; set; } = true;
         
         // ReSharper disable once UseCollectionExpression
         [Description("The keywords that will trigger the IP to be hidden. Modify these incase you have plugins that output IPs in a different way.")]
