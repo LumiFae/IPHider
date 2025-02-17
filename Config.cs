@@ -10,8 +10,10 @@ namespace IPHider
     : IConfig
 #endif
     {
+#if EXILED
         public bool IsEnabled { get; set; } = true;
         public bool Debug { get; set; } = false;
+#endif
 
         public bool ShowInLogs { get; set; } = true;
         
