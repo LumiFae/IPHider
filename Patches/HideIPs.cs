@@ -1,15 +1,12 @@
-﻿using System.Text.RegularExpressions;
-using Exiled.API.Features;
-using HarmonyLib;
-using Paths = PluginAPI.Helpers.Paths;
+﻿using HarmonyLib;
+using LabApi.Features.Wrappers;
+using LabApi.Loader.Features.Paths;
 
 namespace IPHider.Patches
 {
     [HarmonyPatch(typeof(ServerConsole), nameof(ServerConsole.AddLog))]
     public class HideIPs
     {
-        
-        
         // ReSharper disable once InconsistentNaming
         private static bool Prefix(ServerConsole __instance, string q, ConsoleColor color,
             bool hideFromOutputs = false)
@@ -30,7 +27,7 @@ namespace IPHider.Patches
 
         private static void FixLocalAdminLogs(string current, string fixedString)
         {
-            string path = Path.Combine(Paths.SecretLab, "LocalAdminLogs", Server.Port.ToString());
+            string path = Path.Combine(PathManager.SecretLab.FullName, "LocalAdminLogs", Server.Port.ToString());
             if (!Directory.Exists(path))
                 return;
             FileInfo info = new DirectoryInfo(path)

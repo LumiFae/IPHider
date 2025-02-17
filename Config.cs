@@ -1,9 +1,14 @@
 ﻿using System.ComponentModel;
+#if EXILED
 using Exiled.API.Interfaces;
+#endif
 
 namespace IPHider
 {
-    public class Config : IConfig
+    public class Config
+#if EXILED
+    : IConfig
+#endif
     {
         public bool IsEnabled { get; set; } = true;
         public bool Debug { get; set; } = false;
