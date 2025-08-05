@@ -78,17 +78,5 @@ namespace IPHider
             Translation = translation ?? new Translation();
         }
 #endif
-
-        private const string Match = @"\b(?:\d{1,3}\.){3}\d{1,3}(?::\d+)?\b";
-
-        internal static bool CheckIP(string input)
-        {
-            return Regex.IsMatch(input, Match);
-        }
-        
-        internal static string RemoveIPs(string input)
-        {
-            return Regex.Replace(input, Match, Plugin.Instance.Translation.RemoveText);
-        }
     }
 }

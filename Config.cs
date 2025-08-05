@@ -14,6 +14,7 @@ namespace IPHider
         public bool IsEnabled { get; set; } = true;
         public bool Debug { get; set; } = false;
 #endif
+        public bool HideIPs { get; set; } = true;
         
         // ReSharper disable once UseCollectionExpression
         [Description("The keywords that will trigger the IP to be hidden. Modify these incase you have plugins that output IPs in a different way.")]
@@ -23,6 +24,20 @@ namespace IPHider
             "incoming connection",
             "with the ip",
             "disconnected"
+        };
+
+        [Description("Hide all IDs from logs.")]
+        public bool HideIDs { get; set; } = false;
+
+        [Description("Only hide IDs from DNT players.")]
+        public bool HideDNTIDs { get; set; } = true;
+
+        [Description("Hide auth token serials from logs, uses keywords below")]
+        public bool HideAuthTokens { get; set; } = true;
+
+        public IEnumerable<string> AuthTokenKeywords { get; set; } = new[]
+        {
+            "Auth token serial number:"
         };
     }
 }
