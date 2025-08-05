@@ -15,9 +15,10 @@ namespace IPHider
         public bool Debug { get; set; } = false;
 #endif
         public bool HideIPs { get; set; } = true;
-        
+
         // ReSharper disable once UseCollectionExpression
-        [Description("The keywords that will trigger the IP to be hidden. Modify these incase you have plugins that output IPs in a different way.")]
+        [Description(
+            "The keywords that will trigger the IP to be hidden. Modify these incase you have plugins that output IPs in a different way.")]
         public IEnumerable<string> Keywords { get; set; } = new[]
         {
             "player",

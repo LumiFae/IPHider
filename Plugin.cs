@@ -9,7 +9,7 @@ using LabApi.Loader;
 
 namespace IPHider
 {
-    public class Plugin : 
+    public class Plugin :
 #if EXILED
         Plugin<Config, Translation>
 #else
@@ -27,7 +27,7 @@ namespace IPHider
         public override Version Version { get; } = new(1, 2, 0);
 
         public static Plugin Instance { get; private set; }
-        
+
         private Harmony _harmony;
 #if LABAPI
         public Config Config { get; set; }
@@ -68,7 +68,7 @@ namespace IPHider
             base.OnDisabled();
 #endif
         }
-        
+
 #if LABAPI
         public override void LoadConfigs()
         {
