@@ -12,7 +12,7 @@ namespace IPHider.Patches
         
         private static Regex IPRegex { get; } = new(@"\b(?:\d{1,3}\.){3}\d{1,3}(?::\d+)?\b", RegexOptions.Compiled);
 
-        private static Regex IDRegex { get; } = new(@"\w+@(?:steam|discord|northwood|patreon)", RegexOptions.Compiled);
+        private static Regex IDRegex { get; } = new(@"(?:\[)?(\w+)@(steam|discord|northwood|patreon)(?:\])?", RegexOptions.Compiled);
 
         private static Regex AuthTokenRegex { get; } = new(@"[a-zA-Z0-9]{5}-[a-zA-Z0-9]{5}", RegexOptions.Compiled);
         
