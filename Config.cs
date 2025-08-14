@@ -14,7 +14,7 @@ namespace IPHider
         public bool IsEnabled { get; set; } = true;
         public bool Debug { get; set; } = false;
 #endif
-        public bool HideIPs { get; set; } = true;
+        public bool HideIps { get; set; } = true;
 
         // ReSharper disable once UseCollectionExpression
         [Description(
@@ -28,10 +28,10 @@ namespace IPHider
         };
 
         [Description("Hide all IDs from logs.")]
-        public bool HideIDs { get; set; } = false;
+        public bool HideIds { get; set; } = false;
 
         [Description("Only hide IDs from DNT players.")]
-        public bool HideDNTIDs { get; set; } = true;
+        public bool HideDntIds { get; set; } = true;
 
         [Description("Hide auth token serials from logs, uses keywords below")]
         public bool HideAuthTokens { get; set; } = true;
