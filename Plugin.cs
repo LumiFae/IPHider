@@ -24,7 +24,7 @@ namespace IPHider
         public override string Description { get; } = "Hide IPs from LocalAdmin console/logs";
         public override Version RequiredApiVersion { get; } = new(LabApiProperties.CompiledVersion);
 #endif
-        public override Version Version { get; } = new(1, 2, 0);
+        public override Version Version { get; } = new(1, 2, 1);
 
         public static Plugin Instance { get; private set; }
 
